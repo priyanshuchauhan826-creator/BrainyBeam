@@ -1,79 +1,58 @@
-# Class 1
-class Student:
-    def _init_(self, name, age, city):
-        self.name = name
-        self.age = age
-        self.city = city
+# Task Implementation
 
-    def get(self):
-        print("Student:", self.name, self.age, self.city)
+class Device:
+    def __init__(self, brand, model, price):
+        self.brand = brand
+        self.model = model
+        self.price = price
 
-    def post(self, name, age, city):
-        self.name = name
-        self.age = age
-        self.city = city
+    def get_details(self):
+        print(f"Device: {self.brand} {self.model}, Price: ${self.price}")
 
+    def post_update(self, brand, model, price):
+        self.brand = brand
+        self.model = model
+        self.price = price
 
-# Class 2
 class Employee:
-    def _init_(self, name, salary, department):
+    def __init__(self, name, role, salary):
         self.name = name
+        self.role = role
         self.salary = salary
-        self.department = department
 
-    def get(self):
-        print("Employee:", self.name, self.salary, self.department)
+    def get_info(self):
+        print(f"Employee: {self.name}, Role: {self.role}, Salary: {self.salary}")
 
-    def post(self, name, salary, department):
+    def post_edit(self, name, role, salary):
         self.name = name
+        self.role = role
         self.salary = salary
-        self.department = department
 
+class Book:
+    def __init__(self, title, author, pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
 
-# Class 3
-class Product:
-    def _init_(self, pname, price, quantity):
-        self.pname = pname
-        self.price = price
-        self.quantity = quantity
+    def get_data(self):
+        print(f"Book: {self.title} by {self.author}, {self.pages} pages")
 
-    def get(self):
-        print("Product:", self.pname, self.price, self.quantity)
+    def post_changes(self, title, author, pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
 
-    def post(self, pname, price, quantity):
-        self.pname = pname
-        self.price = price
-        self.quantity = quantity
+# Creating 2 objects per class
+d1 = Device("Apple", "iPhone 15", 999)
+d2 = Device("Samsung", "S24", 899)
 
+e1 = Employee("Alice", "Dev", 80000)
+e2 = Employee("Bob", "Designer", 70000)
 
-# 2 Objects of Student
-s1 = Student("Priyanshu", 17, "Ahmedabad")
-s2 = Student("Rahul", 18, "Surat")
+b1 = Book("1984", "George Orwell", 328)
+b2 = Book("The Hobbit", "J.R.R. Tolkien", 310)
 
-# 2 Objects of Employee
-e1 = Employee("Amit", 30000, "IT")
-e2 = Employee("Ravi", 25000, "HR")
-
-# 2 Objects of Product
-p1 = Product("Laptop", 50000, 5)
-p2 = Product("Mouse", 500, 20)
-
-# Get Data
-s1.get()
-s2.get()
-e1.get()
-e2.get()
-p1.get()
-p2.get()
-
-print("\nAfter Update:\n")
-
-# Update Data using post()
-s1.post("Priyanshu Kumar", 18, "Vadodara")
-e1.post("Amit Shah", 35000, "Software")
-p1.post("Gaming Laptop", 60000, 3)
-
-# Get Updated Data
-s1.get()
-e1.get()
-p1.get()
+# Example usage:
+d1.get_details()
+d1.post_update("Apple", "iPhone 15 Pro", 1099)
+d1.get_details()
